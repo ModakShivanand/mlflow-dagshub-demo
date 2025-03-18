@@ -1,4 +1,5 @@
 import mlflow
+import dagshub
 import mlflow.sklearn
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
@@ -7,7 +8,11 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 #import seaborn as sns
 
-mlflow.set_tracking_uri("http://localhost:5000")
+mlflow.set_tracking_uri("https://github.com/ModakShivanand/mlflow-dagshub-demo.git")
+
+
+
+dagshub.init(repo_owner='modakshivanand31', repo_name='my-first-repo', mlflow=True)
 
 iris = load_iris()
 
